@@ -51,10 +51,10 @@ class Student
     DB[:conn].execute(sql)
   end
   def self.all_students_in_grade_9
-    sql <<-SQL
+    sql = <<-SQL
     SELECT id FROM students
     WHERE grade = 9
     SQL
-  p  DB[:conn].execute(sql)
+   DB[:conn].execute(sql)
   end
 end
