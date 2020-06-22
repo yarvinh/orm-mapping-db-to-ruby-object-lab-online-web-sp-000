@@ -67,11 +67,11 @@ class Student
     DB[:conn].execute(sql).map{|e|self.new_from_db(e)}
   end
 
-  self.all
-  sql = <<-SQL
-  SELECT * FROM students
-  SQL
-  DB[:conn].execute(sql).map{|e|self.new_from_db(e)}
+  def self.all
+    sql = <<-SQL
+      SELECT * FROM students
+    SQL
+    DB[:conn].execute(sql).map{|e|self.new_from_db(e)}
   end
 
 end
