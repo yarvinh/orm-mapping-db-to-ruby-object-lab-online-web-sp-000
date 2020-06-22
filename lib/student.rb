@@ -2,12 +2,11 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-      new_song = self.new  # self.new is the same as running Song.new
-      new_song.id = row[0]
-      new_song.name =  row[1]
-      new_song.grade = row[2]
-      new_song  # return the newly created instance
-    # create a new Student object given a row from the database
+      student = self.new
+      students.id = row[0]
+      student.name =  row[1]
+      student.grade = row[2]
+      student
   end
 
   def self.all
