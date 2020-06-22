@@ -64,6 +64,6 @@ class Student
     SELECT * FROM students
     WHERE grade < 12
     SQL
-  self.new_from_db(DB[:conn].execute(sql))
+     p self.new_from_db(DB[:conn].execute(sql))
   end
 end
