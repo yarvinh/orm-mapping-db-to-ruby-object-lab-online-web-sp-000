@@ -64,7 +64,7 @@ class Student
     SELECT * FROM students
     WHERE grade < 12
     SQL
-    DB[:conn].execute(sql).map|e|self.new_from_db(e)}
+    DB[:conn].execute(sql).map{|e|self.new_from_db(e)}
   end
 
 end
