@@ -50,11 +50,12 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+  
   def self.all_students_in_grade_9
     sql = <<-SQL
-    SELECT id FROM students
+    SELECT * FROM students
     WHERE grade = 9
     SQL
-   DB[:conn].execute(sql)
+   DB[:conn].execute(sql).first
   end
 end
